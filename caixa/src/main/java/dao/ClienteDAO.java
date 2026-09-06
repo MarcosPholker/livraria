@@ -45,9 +45,6 @@ public class ClienteDAO {
 		
 		List<Cliente> clientes = session.createQuery("from Cliente", Cliente.class).getResultList();
 		
-		Transaction transaction = session.beginTransaction();
-		
-		transaction.commit();
 		session.close();
 		
 		return clientes;
@@ -58,10 +55,6 @@ public class ClienteDAO {
 		
 		Cliente cliente = session.find(Cliente.class, id);
 		
-		Transaction transaction = session.beginTransaction();
-		
-		
-		transaction.commit();
 		session.close();
 		
 		return cliente;
